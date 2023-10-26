@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for ZC_PERIODCOSTALLRW'
+define service ZUI_PERIODCOSTALLRW_O4 {
+  expose ZC_PERIODCOSTALLRW as PERIODCOSTALLRW;
+}

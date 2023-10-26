@@ -1,0 +1,41 @@
+managed implementation in class ZBP_R_COSTELEMREL unique;
+strict ( 2 );
+
+define behavior for ZR_COSTELEMREL alias COSTELEMREL
+persistent table zcostelemrel
+etag master Locallastchangedat
+lock master
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Costelementgroup,
+   Costelement;
+
+  field ( readonly )
+   Lastchangedat,
+   Lastchangedby,
+   Locallastchangedat;
+
+  field ( readonly : update )
+   Costelementgroup,
+   Costelement;
+
+
+  create;
+  update;
+  delete;
+
+
+  mapping for ZCOSTELEMREL
+  {
+    CostElementGroup = costelementgroup;
+    CostElement = costelement;
+    AllocationRulesCode = allocationrulescode;
+    CreatedBy = createdby;
+    CreatedAt = createdat;
+    LastChangedBy = lastchangedby;
+    LastChangedAt = lastchangedat;
+    LocalLastChangedAt = locallastchangedat;
+  }
+}

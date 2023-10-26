@@ -1,0 +1,76 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'COSTELEMREL',
+    typeNamePlural: 'COSTELEMRELs'
+  }
+}
+annotate view ZC_COSTELEMREL with
+{
+  @UI.facet: [ {
+    id: 'idIdentification',
+    type: #IDENTIFICATION_REFERENCE,
+    label: 'COSTELEMREL',
+    position: 10
+  } ]
+  @UI.lineItem: [ {
+    position: 10 ,
+    importance: #MEDIUM,
+    label: 'Costelementgroup'
+  } ]
+  @UI.identification: [ {
+    position: 10 ,
+    label: 'Costelementgroup'
+  } ]
+  @EndUserText.label: '成本要素组'
+  CostElementGroup;
+
+  @UI.lineItem: [ {
+    position: 20 ,
+    importance: #MEDIUM,
+    label: ''
+  } ]
+  @UI.identification: [ {
+    position: 20 ,
+    label: ''
+  } ]
+  @EndUserText.label: '成本要素'
+  CostElement;
+
+  @UI.lineItem: [ {
+    position: 30 ,
+    importance: #MEDIUM,
+    label: 'Allocationrulescode'
+  } ]
+  @UI.identification: [ {
+    position: 30 ,
+    label: 'Allocationrulescode'
+  } ]
+  @EndUserText.label: '分摊规则'
+  AllocationRulesCode;
+
+  @UI.lineItem: [ {
+    position: 40 ,
+    importance: #MEDIUM,
+    label: ''
+  } ]
+  @UI.identification: [ {
+    position: 40 ,
+    label: ''
+  } ]
+  CreatedBy;
+
+  @UI.lineItem: [ {
+    position: 50 ,
+    importance: #MEDIUM,
+    label: ''
+  } ]
+  @UI.identification: [ {
+    position: 50 ,
+    label: ''
+  } ]
+  CreatedAt;
+
+  @UI.hidden: true
+  LocalLastChangedAt;
+}

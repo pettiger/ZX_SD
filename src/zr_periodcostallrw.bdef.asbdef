@@ -1,0 +1,51 @@
+managed implementation in class ZBP_R_PERIODCOSTALLRW unique;
+strict ( 2 );
+
+
+define behavior for ZR_PERIODCOSTALLRW alias PERIODCOSTALLRW
+persistent table zperiodcostallrw
+
+etag master Locallastchangedat
+lock master
+authorization master( global )
+
+{
+  field ( mandatory : create )
+   Fiscalyear,
+   Fiscalperiod,
+   Sendercostcenter,
+   Costelementgroup,
+   Receivercostcenter;
+
+  field ( readonly )
+   Lastchangedat,
+   Lastchangedby,
+   Locallastchangedat;
+
+  field ( readonly : update )
+   Fiscalyear,
+   Fiscalperiod,
+   Sendercostcenter,
+   Costelementgroup,
+   Receivercostcenter;
+
+
+  create;
+  update;
+  delete;
+
+  mapping for ZPERIODCOSTALLRW
+  {
+    FiscalYear = fiscalyear;
+    FiscalPeriod = fiscalperiod;
+    SenderCostCenter = sendercostcenter;
+    CostElementgroup = costelementgroup;
+    ReceiverCostCenter = receivercostcenter;
+    ReceiverRW = receiverrw;
+    CreatedBy = createdby;
+    CreatedAt = createdat;
+    LastChangedBy = lastchangedby;
+    LastChangedAt = lastchangedat;
+    LocalLastChangedAt = locallastchangedat;
+  }
+}

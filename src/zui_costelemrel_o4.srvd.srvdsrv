@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition for ZC_COSTELEMREL'
+define service ZUI_COSTELEMREL_O4 {
+  expose ZC_COSTELEMREL as COSTELEMREL;
+}
